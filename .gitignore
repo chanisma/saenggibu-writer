@@ -1,0 +1,38 @@
+# 공개 저장소에는 스킬을 쓰는 데 필요한 파일만 올린다(허용 목록 방식).
+# 학생 자료·산출물(results/)·로컬 설정·도구 등은 모두 제외된다.
+
+# 1) 루트의 모든 항목 제외
+/*
+
+# 2) 루트에서 올릴 파일
+!/.gitignore
+!/.gitattributes
+!/CLAUDE.md
+!/LICENSE
+
+# 3) 과목 맞춤 프롬프트 (실명이 들어 있는 판본은 제외)
+!/prompts/
+/prompts/인공지능과피지컬컴퓨팅.v3.prompt.txt
+/prompts/인공지능과피지컬컴퓨팅.v4.prompt.txt
+
+# 4) 스킬 본체만 (.claude의 다른 설정은 제외)
+!/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/saenggibu-writer/
+
+# 과목 누적 지시 중 학생 실명·학번이 들어 있는 파일은 제외
+/.claude/skills/saenggibu-writer/references/memory/정보.md
+/.claude/skills/saenggibu-writer/references/memory/프로그래밍.md
+/.claude/skills/saenggibu-writer/references/memory/인공지능과피지컬컴퓨팅.md
+/.claude/skills/saenggibu-writer/references/memory/스팀사회연결망.md
+
+# 잡파일
+__pycache__/
+*.pyc
+*.zip
+~$*
+Thumbs.db
+.DS_Store
+desktop.ini
